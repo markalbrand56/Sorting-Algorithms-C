@@ -4,7 +4,7 @@ void bubbleSort(int arr[], int size){
     int ordered = 0;
 
     while(ordered != 1){
-        int counter = 0;  // Tienen que ser todas las pocisiones correctas en una iteración del bucle while
+        int counter = 0;  // Tienen que ser todas las posiciones correctas en una iteración del bucle while
         for(int i = 0; i < size-1; i++){
             if(arr[i] > arr[i + 1]){  // Cambiará de posición a dos números si el de la izquierda es mayor
                 int temp = arr[i];
@@ -24,7 +24,7 @@ void selectionSort(int arr[], int size){
     int unOrdered = size;
     int max;
 
-    while(unOrdered > 0){
+    while(unOrdered > 0){  // Mientras falten datos por ordenar
         max = 0;
         for (int i = 1; i < unOrdered; ++i) {
             if(arr[max] < arr[i]){  // Encontrará el numero mayor
@@ -39,7 +39,7 @@ void selectionSort(int arr[], int size){
     }
 }
 
-void printArray(int arr[], int size)
+void printArray(int arr[], int size)  // Imprimir un array de manera estética
 {
     int i;
     for (i=0; i < size; i++)
@@ -47,7 +47,7 @@ void printArray(int arr[], int size)
     printf("\n");
 }
 
-void resetArray(int arr[], int size){
+void resetArray(int arr[], int size){  // Desordenar el array nuevamente para otras pruebas
     int new[] = {64, 24, 6, 22, 10, 7, 2, 1};
     for (int i = 0; i < size; ++i) {
         arr[i] = new[i];
