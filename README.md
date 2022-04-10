@@ -1,4 +1,4 @@
-# Sorting-Alogrithms-C
+# Sorting-Algorithms-C
 Implementación de algunos algoritmos de ordenamiento en C
 
 ## Algoritmos a representar 
