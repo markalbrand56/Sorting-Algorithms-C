@@ -1,5 +1,31 @@
 #include <stdio.h>
 
+void bubbleSort(int arr[], int size);
+void selectionSort(int arr[], int size);
+void insertionSort(int arr[], int size);
+void printArray(int arr[], int size);
+void resetArray(int arr[], int size);
+
+int main() {
+    int numbers[] = {64, 24, 6, 22, 10, 7, 2, 1};
+    int n = sizeof(numbers)/sizeof(numbers[0]);
+
+    bubbleSort(numbers, n);
+    printArray(numbers, n);
+
+    resetArray(numbers, n);
+
+    selectionSort(numbers, n);
+    printArray(numbers, n);
+
+    resetArray(numbers, n);
+
+    insertionSort(numbers, n);
+    printArray(numbers, n);
+
+    return 0;
+}
+
 void bubbleSort(int arr[], int size){
     int ordered = 0;
 
@@ -39,8 +65,24 @@ void selectionSort(int arr[], int size){
     }
 }
 
-void printArray(int arr[], int size)  // Imprimir un array de manera estética
-{
+void insertionSort(int arr[], int size){
+    int key;
+
+    for (int i = 1; i < size; i++) {
+        key = arr[i];
+        int j = i - 1;
+
+        while(j >= 0 && arr[j] > key){  // Si el elemento anterior es mayor, cambian de posición
+            arr[j+1] = arr[j];
+            j = j - 1;
+        }
+
+        arr[j+1] = key;  // Cuando encuentre su lugar, se guarda la clave
+    }
+}
+
+void printArray(int arr[], int size){  // Imprimir un array de manera estética
+
     int i;
     for (i=0; i < size; i++)
         printf("%d ", arr[i]);
@@ -54,16 +96,4 @@ void resetArray(int arr[], int size){  // Desordenar el array nuevamente para ot
     }
 }
 
-int main() {
-    int numbers[] = {64, 24, 6, 22, 10, 7, 2, 1};
-    int n = sizeof(numbers)/sizeof(numbers[0]);
 
-    bubbleSort(numbers, n);
-    printArray(numbers, n);
-
-    resetArray(numbers, n);
-
-    selectionSort(numbers, n);
-    printArray(numbers, n);
-    return 0;
-}
