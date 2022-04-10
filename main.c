@@ -72,11 +72,10 @@ void insertionSort(int arr[], int size){
         key = arr[i];
         int j = i - 1;
 
-        while(j >= 0 && arr[j] > key){  // Si el elemento anterior es mayor, cambian de posición
+        while(j >= 0 && arr[j] > key){  // Si el elemento anterior es mayor, cambian de posición hasta que ya no sea el caso
             arr[j+1] = arr[j];
             j = j - 1;
         }
-
         arr[j+1] = key;  // Cuando encuentre su lugar, se guarda la clave
     }
 }
